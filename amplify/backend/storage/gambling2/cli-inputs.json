@@ -1,0 +1,10 @@
+{
+  "resourceName": "gambling2",
+  "tableName": "gambling2",
+  "partitionKey": {
+    "fieldName": "name",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}
