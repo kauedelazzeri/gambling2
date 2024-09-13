@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-gambling2-dev-6a72c-authRole",
+      "UnauthRoleArn": "arn:aws:iam::647008511765:role/amplify-gambling2-dev-6a72c-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::647008511765:role/amplify-gambling2-dev-6a72c-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-gambling2-dev-6a72c-deployment",
+      "UnauthRoleName": "amplify-gambling2-dev-6a72c-unauthRole",
+      "StackName": "amplify-gambling2-dev-6a72c",
+      "StackId": "arn:aws:cloudformation:us-east-1:647008511765:stack/amplify-gambling2-dev-6a72c/d73cbb60-7226-11ef-b245-125fd6546fb9",
+      "AmplifyAppId": "d2elhp4cvejnre"
+    },
+    "categories": {
+      "auth": {
+        "gambling295899e73": {}
+      }
+    }
+  }
+}
