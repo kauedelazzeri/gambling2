@@ -6,9 +6,9 @@
     "framework": "none",
     "config": {
       "SourceDir": "src",
-      "DistributionDir": "dist",
-      "BuildCommand": "npm.cmd run-script build",
-      "StartCommand": "npm.cmd run-script start"
+      "DistributionDir": "build",
+      "BuildCommand": "npm run build",
+      "StartCommand": "npm start"
     }
   },
   "providers": [

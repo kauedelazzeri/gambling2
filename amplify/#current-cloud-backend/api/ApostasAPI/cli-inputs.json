@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "paths": {
+    "/apostas": {
+      "name": "/apostas",
+      "lambdaFunction": "gambling20cc9a96b",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
+    }
+  }
+}

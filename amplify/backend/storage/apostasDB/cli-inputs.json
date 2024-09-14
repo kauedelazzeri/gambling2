@@ -1,0 +1,14 @@
+{
+  "resourceName": "apostasDB",
+  "tableName": "apostaId",
+  "partitionKey": {
+    "fieldName": "apostaId",
+    "fieldType": "string"
+  },
+  "sortKey": {
+    "fieldName": "dataCriacao",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

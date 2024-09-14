@@ -1,0 +1,7 @@
+{
+  "tableName": "apostaId",
+  "partitionKeyName": "apostaId",
+  "partitionKeyType": "S",
+  "sortKeyName": "dataCriacao",
+  "sortKeyType": "S"
+}

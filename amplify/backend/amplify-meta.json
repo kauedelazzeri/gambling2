@@ -1,0 +1,183 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-gambling2-dev-6a72c-authRole",
+      "UnauthRoleArn": "arn:aws:iam::647008511765:role/amplify-gambling2-dev-6a72c-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::647008511765:role/amplify-gambling2-dev-6a72c-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-gambling2-dev-6a72c-deployment",
+      "UnauthRoleName": "amplify-gambling2-dev-6a72c-unauthRole",
+      "StackName": "amplify-gambling2-dev-6a72c",
+      "StackId": "arn:aws:cloudformation:us-east-1:647008511765:stack/amplify-gambling2-dev-6a72c/d73cbb60-7226-11ef-b245-125fd6546fb9",
+      "AmplifyAppId": "d2elhp4cvejnre",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-gambling2-dev-6a72c-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+    }
+  },
+  "auth": {
+    "gambling295899e73": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-gambling2-dev-6a72c-deployment/amplify-cfn-templates/auth/gambling295899e73-cloudformation-template.json",
+        "logicalId": "authgambling295899e73"
+      },
+      "lastPushTimeStamp": "2024-09-14T18:40:29.233Z",
+      "output": {
+        "UserPoolId": "us-east-1_8a0fcX1Cp",
+        "AppClientIDWeb": "2madm0kcpsncdc42mn59e0hqrb",
+        "AppClientID": "175tcnu2tn1vf251d7vai012ou",
+        "IdentityPoolId": "us-east-1:d5d77be4-9d57-4257-ae42-98f0cf7f6dc8",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:647008511765:userpool/us-east-1_8a0fcX1Cp",
+        "IdentityPoolName": "gambling295899e73_identitypool_95899e73__dev",
+        "UserPoolName": "gambling295899e73_userpool_95899e73"
+      },
+      "lastPushDirHash": "Uq29pAtnioVykqhThPbs0OpNMgg="
+    }
+  },
+  "storage": {
+    "gambling2": {
+      "service": "DynamoDB",
+      "providerPlugin": "awscloudformation",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-gambling2-dev-6a72c-deployment/amplify-cfn-templates/storage/gambling2-cloudformation-template.json",
+        "logicalId": "storagegambling2"
+      },
+      "lastPushTimeStamp": "2024-09-14T18:40:29.235Z",
+      "output": {
+        "PartitionKeyName": "name",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:dynamodb:us-east-1:647008511765:table/gambling2-dev",
+        "StreamArn": "arn:aws:dynamodb:us-east-1:647008511765:table/gambling2-dev/stream/2024-09-13T23:56:17.363",
+        "PartitionKeyType": "S",
+        "Name": "gambling2-dev"
+      },
+      "lastPushDirHash": "OhmlroihTaXB7p4CX9hx2DUMtJU="
+    },
+    "apostasDB": {
+      "service": "DynamoDB",
+      "providerPlugin": "awscloudformation",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-gambling2-dev-6a72c-deployment/amplify-cfn-templates/storage/apostasDB-cloudformation-template.json",
+        "logicalId": "storageapostasDB"
+      },
+      "lastPushTimeStamp": "2024-09-14T18:40:29.262Z",
+      "output": {
+        "PartitionKeyName": "apostaId",
+        "SortKeyName": "dataCriacao",
+        "SortKeyType": "S",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:dynamodb:us-east-1:647008511765:table/apostaId-dev",
+        "StreamArn": "arn:aws:dynamodb:us-east-1:647008511765:table/apostaId-dev/stream/2024-09-14T16:51:10.258",
+        "PartitionKeyType": "S",
+        "Name": "apostaId-dev"
+      },
+      "lastPushDirHash": "mfAtM2EwS4WQoc9uKypWYYEO7Ak="
+    }
+  },
+  "function": {
+    "gambling20cc9a96b": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": [
+        {
+          "category": "storage",
+          "resourceName": "gambling2",
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "attributeEnvMap": {
+            "Name": "TABLE_NAME",
+            "Arn": "TABLE_ARN"
+          }
+        }
+      ],
+      "lastBuildTimeStamp": "2024-09-14T18:02:42.679Z",
+      "lastBuildType": "DEV",
+      "lastPackageTimeStamp": "2024-09-14T18:02:47.696Z",
+      "distZipFilename": "gambling20cc9a96b-52696c6c7241424e6e4a-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-gambling2-dev-6a72c-deployment",
+        "s3Key": "amplify-builds/gambling20cc9a96b-52696c6c7241424e6e4a-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-gambling2-dev-6a72c-deployment/amplify-cfn-templates/function/gambling20cc9a96b-cloudformation-template.json",
+        "logicalId": "functiongambling20cc9a96b"
+      },
+      "lastPushTimeStamp": "2024-09-14T18:40:29.275Z",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::647008511765:role/gambling2LambdaRole2f3c5640-dev",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:lambda:us-east-1:647008511765:function:gambling20cc9a96b-dev",
+        "Name": "gambling20cc9a96b-dev",
+        "LambdaExecutionRole": "gambling2LambdaRole2f3c5640-dev"
+      },
+      "lastPushDirHash": "+MN6kTgo8/96zLMwNg0k9XcFEGg=",
+      "lastDevBuildTimeStamp": "2024-09-14T18:03:13.124Z"
+    }
+  },
+  "api": {
+    "ApostasAPI": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "gambling20cc9a96b",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ],
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-gambling2-dev-6a72c-deployment/amplify-cfn-templates/api/ApostasAPI-cloudformation-template.json",
+        "logicalId": "apiApostasAPI"
+      },
+      "lastPushTimeStamp": "2024-09-14T18:40:29.287Z",
+      "output": {
+        "ApiName": "ApostasAPI",
+        "RootUrl": "https://8n4bx5q7x0.execute-api.us-east-1.amazonaws.com/dev",
+        "ApiId": "8n4bx5q7x0"
+      },
+      "lastPushDirHash": "iYKqR5evX6ly027gQ9a+tFRiBlY="
+    }
+  },
+  "hosting": {
+    "amplifyhosting": {
+      "service": "amplifyhosting",
+      "providerPlugin": "awscloudformation",
+      "type": "manual",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-gambling2-dev-6a72c-deployment/amplify-cfn-templates/hosting/amplifyhosting-template.json",
+        "logicalId": "hostingamplifyhosting"
+      },
+      "lastPushTimeStamp": "2024-09-14T18:40:29.300Z",
+      "output": {},
+      "lastPushDirHash": "RcEkr1EkQO/hF9RHhjI00ttzZsc="
+    }
+  }
+}

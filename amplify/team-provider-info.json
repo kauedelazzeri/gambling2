@@ -9,14 +9,31 @@
       "UnauthRoleName": "amplify-gambling2-dev-6a72c-unauthRole",
       "StackName": "amplify-gambling2-dev-6a72c",
       "StackId": "arn:aws:cloudformation:us-east-1:647008511765:stack/amplify-gambling2-dev-6a72c/d73cbb60-7226-11ef-b245-125fd6546fb9",
-      "AmplifyAppId": "d2elhp4cvejnre"
+      "AmplifyAppId": "d2elhp4cvejnre",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-gambling2-dev-6a72c-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
     },
     "categories": {
       "auth": {
         "gambling295899e73": {}
       },
       "function": {
-        "gambling20cc9a96b": {}
+        "gambling20cc9a96b": {
+          "deploymentBucketName": "amplify-gambling2-dev-6a72c-deployment",
+          "s3Key": "amplify-builds/gambling20cc9a96b-52696c6c7241424e6e4a-build.zip"
+        }
+      },
+      "storage": {
+        "gambling2": {},
+        "apostasDB": {}
+      },
+      "api": {
+        "ApostasAPI": {}
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d2elhp4cvejnre",
+          "type": "manual"
+        }
       }
     }
   }
